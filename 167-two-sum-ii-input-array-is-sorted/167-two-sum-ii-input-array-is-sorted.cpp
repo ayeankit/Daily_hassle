@@ -1,27 +1,25 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& num, int target) {
+    vector<int> twoSum(vector<int>& numbers, int target) {
          //two pointer
         
-        int l=0;
-        int e=num.size()-1;
-        
-        while(l<e){
-            
-            if(num[l]+num[e]==target){
-                return {l+1,e+1};
+       int i=0, n=numbers.size();
+        int j=n-1;
+        while(i<n){
+            int val=target-numbers[i];
+            if(numbers[j]<val){
+                int j=n-1;
+                i++;
+               // continue;
             }
-            if(num[l]+num[e]>target){
-                e--;
+            if(numbers[j]==val){
+                return {i+1,j+1};
             }
-            
-            else{
-                l++;
+            else if(numbers[j]>val){
+                j--;
             }
-            
         }
         return {};
-        
     }
 };
         
