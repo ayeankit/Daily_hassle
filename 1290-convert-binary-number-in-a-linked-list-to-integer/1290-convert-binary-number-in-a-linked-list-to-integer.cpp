@@ -14,13 +14,17 @@ public:
         int ans=0;
             ListNode *temp=head;
         
-        while(temp!=NULL){
-            ans*=2;
-            ans+=(temp->val);
-            temp=temp->next;
-            
+        ListNode *ptr=head;
+        int sum=0;
+        while(ptr){
+            if(ptr->val==0){
+                sum= sum*2;
+            }else{
+                sum= sum*2 +1;
+            }
+            ptr=ptr->next;
         }
-        return ans;
+        return sum;
         
     }
 };
