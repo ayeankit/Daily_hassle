@@ -11,9 +11,6 @@
 class Solution {
 public:
     ListNode* deleteMiddle(ListNode* head) {
-       // if(head->next==NULL) delete ListNode;
-        
-       
        ListNode *s = head, *f = head;
         if(!s->next) return NULL;
 		f = f->next->next;
@@ -23,5 +20,6 @@ public:
 		}
 		s->next = s->next->next;
 		return head;
-    }
+    } 
+    
 };
